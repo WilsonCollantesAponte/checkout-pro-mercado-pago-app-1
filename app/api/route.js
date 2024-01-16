@@ -13,9 +13,9 @@ export async function POST() {
         items: [
           {
             id: "1",
-            quantity: 5,
+            quantity: 3,
             title: "Fe with me",
-            unit_price: 25,
+            unit_price: 10,
             category_id: "photo",
             description: "friendship",
             picture_url:
@@ -30,7 +30,8 @@ export async function POST() {
       },
     });
 
-    return Response.json(response, { status: 200 });
+    // return Response.json({ client, preference, response }, { status: 200 });
+    return Response.json(response.id, { status: 200 });
   } catch (error) {
     return Response.json(error, {
       status: "400",
@@ -45,3 +46,5 @@ export async function GET() {
     { status: 200 }
   );
 }
+
+//Los resultados se envían por query a la url de retorno
